@@ -13,7 +13,7 @@ public class Priority {
 
     //bi-directional many-to-one association to Organization
     @ManyToOne
-    @JoinColumn(name="organization_id", nullable = false)
+    @JoinColumn(name="organization_id", referencedColumnName = "id", nullable = false)
     private Organization organization;
 
 

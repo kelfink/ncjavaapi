@@ -33,6 +33,9 @@ public class Main {
         System.out.println("ORG ID: " + org.getId());
         System.out.println("priority id: " + priority1.getId());
         //System.out.printf("Get back the priority %d", getPriority(100, entityManager).getId());
+
+        // Clear the cache so that the org is forced to reload via SQL.
+       entityManager.clear();
         Organization orgReturned = getOrganization(org.getId(), entityManager);
         if (orgReturned == null) {
             System.err.println("no org returned");
